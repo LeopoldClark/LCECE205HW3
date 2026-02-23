@@ -19,7 +19,11 @@ int main(){
         edgesIn(c, 3); //request user input for edge 3
         Area(a, b, c, s, area); //calculate area given user inputs
 
+        if(area == 0){
+            cout << "\nThe area of the triangle is: 00000000" << endl; //output area of triangle
+        }else{
         cout << "\nThe area of the triangle is: " << area << endl; //output area of triangle
+        }
 
         repeat(); //prompt user for continuation
     }
@@ -40,9 +44,12 @@ float edgesIn(float &edge, int j){ //build function promting user edge inputs
 
 void Area(float a, float b, float c, float &s, float &area){ //build function calculating area of trianle
     s = (.5) * (a + b + c); //calculate semiperimeter
-    area = sqrt(s * (s - a) * (s - b) * (s - c)); //calculate area
     if (a <= 0 or b <= 0 or c <= 0){ //any invalid inluputs
-        area = 00000000; //assign area to involaid output
+        area = 0; //assign area to invalid output
+    }else if (s <= a or s <= b or s <= c){ //if semiperimeter is less than or equal to any edge
+        area = 0; //assign area to invalid output
+    }else{ //if all inputs are valid
+    area = sqrt(s * (s - a) * (s - b) * (s - c)); //calculate area
     }
 }
 
