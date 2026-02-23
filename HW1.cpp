@@ -57,7 +57,11 @@ void conversion(char &out){ //build function converting user inputs to standard 
 }
 
 int timeOut(){ //build function outputting converted time
+    if (minutes < 10){ //if minutes is less than 10
+        cout << "\nYour time in standard is: " << hours << ":0" << minutes << out << endl; //output converted time with leading 0 for minutes
+    }else{ //if minutes is greater than or equal to 10
     cout << "\nYour time in standard is: " << hours << ":" << minutes << out << endl; //output converted time
+    }
 
     return 0; //end function
 }
