@@ -37,7 +37,7 @@ void weightIn(int &lb, int &oz){ //build input function with reference params lb
 
     cout << "\nPlease enter the ounces (oz) of your weight: " << endl; //prompt user for ounces
     cin >> oz; //assign user input to oz
-    while (oz < 0 or oz > 16){ //if user's input is invalid
+    while (oz < 0 or oz > 15){ //if user's input is invalid
         cout << "\nPlease enter a valid weight in ounces: " << endl; //prompt user for valid input
         cin >> oz; //assign user input to oz
     }
